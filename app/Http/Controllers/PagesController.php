@@ -8,12 +8,17 @@ class PagesController extends Controller
 {
     public function index()
     {
-        return view('welcome');
+        return view('pages.welcome');
     }
 
     public function about()
     {
-        return view('pages.about');
+        $data = array(
+            'title' => 'About page',
+            'skills' => ['fornt-end', 'back-end', 'deployment'],
+        );
+
+        return view('pages.about')->with($data);
     }
 
     public function posts()
