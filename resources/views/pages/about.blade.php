@@ -3,10 +3,19 @@
 @section('content')
     <h1>{{$title}}</h1>
     @if(count($skills) > 0)
-        <ul class="list-group">
+        <div class="row">
+            {{--<ul class="list-group col-xs-12">--}}
+                {{--@foreach($skills as $skill)--}}
+                    {{--<li class="list-group-item col-xs-3">{{$skill}}</li>--}}
+                {{--@endforeach--}}
+            {{--</ul>--}}
             @foreach($skills as $skill)
-                <li class="list-group-item">{{$skill}}</li>
+                <div class="col-xs-3">
+                    <div class="skill__item">
+                        {{$skill}}
+                    </div>
+                </div>
             @endforeach
-        </ul>
+        </div>
     @endif
 @endsection
