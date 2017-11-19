@@ -1,6 +1,6 @@
 ## Learn Laravel on real simple example
 
-This is study progect. Simlpe blog on Laravel.
+This is study project. Simple blog on Laravel.
 
 
 
