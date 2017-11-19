@@ -24,17 +24,21 @@
                     <li> <a href=/posts/>Blog</a>
                     </li>
                 </ul>
-                {{--<ul class="nav navbar-nav navbar-right">--}}
-                    {{--<li><a href=http://themes.getbootstrap.com onclick='ga("send","event","Navbar","Community links","Themes")'>Themes</a></li>--}}
-                    {{--<li><a href=https://jobs.getbootstrap.com onclick='ga("send","event","Navbar","Community links","Jobs")'>Jobs</a></li>--}}
-                    {{--<li><a href=http://expo.getbootstrap.com onclick='ga("send","event","Navbar","Community links","Expo")'>Expo</a></li>--}}
-                    {{--<li><a href=http://blog.getbootstrap.com onclick='ga("send","event","Navbar","Community links","Blog")'>Blog</a></li>--}}
-                {{--</ul>--}}
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href='/posts/create/'>Create Post</a></li>
+                </ul>
             </nav>
         </div>
     </header>
     <div class="container">
+        @include('elements.messages')
         @yield('content')
     </div>
+
+    <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace( 'article-ckeditor' );
+    </script>
+
 </body>
 </html>

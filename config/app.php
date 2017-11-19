@@ -177,6 +177,13 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+
+        /* Include HtmlForm from Collective*/
+        Collective\Html\HtmlServiceProvider::class,
+
+        /* Include Laraver CK*/
+        Unisharp\Ckeditor\ServiceProvider::class,
+
     ],
 
     /*
@@ -225,6 +232,10 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        /* Include HtmlForm from Collective */
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
 
     ],
 

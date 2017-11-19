@@ -7,7 +7,7 @@
                 <a href="/posts/{{$post->id}}">
                     <h3>{{$post->title}}</h3>
                 </a>
-                <span>{{$post->content}}</span>
+                <span>{{$post->created_at}}</span>
             </div>
         @endforeach
     @else
