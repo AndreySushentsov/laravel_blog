@@ -8,6 +8,16 @@ use App\Post;
 class PostsController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['index', 'show']]);
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -39,13 +49,25 @@ class PostsController extends Controller
     {
         $this->validate($request, [
            'title' => 'required',
-           'content' =>'required'
+           'content' =>'required',
+            'cover_image' => 'image|nullable|max:1999'
         ]);
+
+        if($request->hasFile('cover_image')){
+            $fileNameWithExt =  $request->file('cover_image')->getClientOriginalName();
+            $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('cover_image')->getClientOriginalExtension();
+            $fileNameToStore = $fileName.'_'.time().'.'.$extension;
+            $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
+        } else{
+            $fileNameToStore = 'noimage.jpg';
+        }
 
         $post = new Post();
         $post->title = $request->input('title');
         $post->content = $request->input('content');
         $post->user_id = auth()->user()->id;
+        $post->cover_image = $fileNameToStore;
         $post->save();
 
         return redirect('/posts')->with('success', 'Post Created');
