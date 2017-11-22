@@ -58,7 +58,7 @@ class PostsController extends Controller
             $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
             $extension = $request->file('cover_image')->getClientOriginalExtension();
             $fileNameToStore = $fileName.'_'.time().'.'.$extension;
-            $path = $request->file('cover_image')->storeAs('public', $fileNameToStore);
+            $path = $request->file('cover_image')->store('public', $fileNameToStore);
         } else{
             $fileNameToStore = 'noimage.jpg';
         }
