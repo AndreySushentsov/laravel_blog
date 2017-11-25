@@ -74,11 +74,12 @@
                 </div>
             </div>
         </nav>
-    </div>
 
-    <div class="container">
-        @include('elements.messages')
-        @yield('content')
+        <div class="container">
+            @include('elements.messages')
+            @yield('content')
+        </div>
+
     </div>
 
     <!-- Scripts -->

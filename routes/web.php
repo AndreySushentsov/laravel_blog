@@ -21,3 +21,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
+Route::get('/component', function (){
+
+    return view('pages.components');
+});

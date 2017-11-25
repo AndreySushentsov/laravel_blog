@@ -184,6 +184,9 @@ return [
         /* Include Laraver CK*/
         Unisharp\Ckeditor\ServiceProvider::class,
 
+        /* Include Laravel Passport */
+        Laravel\Passport\PassportServiceProvider::class,
+
     ],
 
     /*
