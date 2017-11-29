@@ -8396,3 +8396,22 @@ button.close {
   height: auto;
 }
 
+.login-form__modal-wrapper,
+.register-form__modal-wrapper {
+  width: 50%;
+  height: 60%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.register-form__modal-wrapper {
+  height: 70%;
+}
+
+.panel-body {
+  padding-bottom: 0;
+}
+
